@@ -10,7 +10,12 @@ module.exports = function(grunt) {
       }
     },
     nodemon: {
-        script: './bin/www',
+        dev:{
+          script: './app.js'
+        },
+        env: {
+          PORT: '3000'
+        }
     },
     mochaTest: {
       test: {
