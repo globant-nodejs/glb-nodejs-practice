@@ -14,7 +14,7 @@ module.exports = function(grunt) {
     },
     mochaTest: {
       test: {
-        src: ['./tests/tests.js']
+        src: ['./tests/githubControllerTest.js']
       }
     }
   });

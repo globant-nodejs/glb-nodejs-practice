@@ -1,14 +1,11 @@
-var getRepos=require('./controllers/githubController.js'),
-    controlParam=require('./controllers/urlParamController.js'),
-    errorCtrl=require('./controllers/errorController.js'),
+var gitHubController=require('./controllers/githubController.js'),
+    controlParam=require('./functions/controlParam.js'),
+    error=require('./functions/errorFunction.js'),
     express=require('express'),
     routes=express.Router();
 
-
-routes.param('name', controlParam.controlParam);
-routes.get('/:name',getRepos.githubController);
-routes.use(errorCtrl.error404);
-routes.use(errorCtrl.error500A);
-routes.use(errorCtrl.error500B);
+routes.param('name', controlParam.control);
+routes.get('/:name',gitHubController.getRepositories);
+routes.use(error.error404);
 
 module.exports = routes;

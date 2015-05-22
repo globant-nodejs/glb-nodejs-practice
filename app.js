@@ -7,7 +7,6 @@ var express = require('express'),
     cors=require('cors'),
     app = express();
 
-
 if (app.get('env') === 'production') {
   console.log('Production environment');
   app.use(function(req,res){

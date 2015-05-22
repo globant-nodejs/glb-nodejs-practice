@@ -1,0 +1,26 @@
+{
+    "_embedded": {
+        "Repos": [
+                   
+            {
+                "_links": {
+                    "self": {
+                        "href": "/MDIAZ88/angular-lab"
+                    }
+                },
+                "name": "angular-lab"
+            }
+
+        ]
+    },
+    "_links": {
+        "self": {
+            "href": "/MDIAZ88"
+        }
+    },
+    "id": "HAL",
+    "name": "HAL+JSON-Test",
+    "origin": "Github",
+    "status": "Public",
+    "total": 1
+}
