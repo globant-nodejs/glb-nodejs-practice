@@ -1,0 +1,77 @@
+[
+{
+    "sha": "f10e20d4907e265cd6876bae5506cda074819b2d",
+    "commit": {
+      "author": {
+        "name": "Esteban S. Abait",
+        "email": "estebanabait@gmail.com",
+        "date": "2014-10-31T18:10:09Z"
+      },
+      "committer": {
+        "name": "Esteban S. Abait",
+        "email": "estebanabait@gmail.com",
+        "date": "2014-10-31T18:10:09Z"
+      },
+      "message": "Merge pull request #2 from jvallelunga/master\n\nAnti-Pattern added",
+      "tree": {
+        "sha": "d4390656b5f1cedc7fed7fa53156966cebc243f6",
+        "url": "https://api.github.com/repos/MDIAZ88/angular-lab/git/trees/d4390656b5f1cedc7fed7fa53156966cebc243f6"
+      },
+      "url": "https://api.github.com/repos/MDIAZ88/angular-lab/git/commits/f10e20d4907e265cd6876bae5506cda074819b2d",
+      "comment_count": 0
+    },
+    "url": "https://api.github.com/repos/MDIAZ88/angular-lab/commits/f10e20d4907e265cd6876bae5506cda074819b2d",
+    "html_url": "https://github.com/MDIAZ88/angular-lab/commit/f10e20d4907e265cd6876bae5506cda074819b2d",
+    "comments_url": "https://api.github.com/repos/MDIAZ88/angular-lab/commits/f10e20d4907e265cd6876bae5506cda074819b2d/comments",
+    "author": {
+      "login": "eabait",
+      "id": 1002551,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1002551?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/eabait",
+      "html_url": "https://github.com/eabait",
+      "followers_url": "https://api.github.com/users/eabait/followers",
+      "following_url": "https://api.github.com/users/eabait/following{/other_user}",
+      "gists_url": "https://api.github.com/users/eabait/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/eabait/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/eabait/subscriptions",
+      "organizations_url": "https://api.github.com/users/eabait/orgs",
+      "repos_url": "https://api.github.com/users/eabait/repos",
+      "events_url": "https://api.github.com/users/eabait/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/eabait/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "eabait",
+      "id": 1002551,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1002551?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/eabait",
+      "html_url": "https://github.com/eabait",
+      "followers_url": "https://api.github.com/users/eabait/followers",
+      "following_url": "https://api.github.com/users/eabait/following{/other_user}",
+      "gists_url": "https://api.github.com/users/eabait/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/eabait/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/eabait/subscriptions",
+      "organizations_url": "https://api.github.com/users/eabait/orgs",
+      "repos_url": "https://api.github.com/users/eabait/repos",
+      "events_url": "https://api.github.com/users/eabait/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/eabait/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "c0db7a006577188a3e8931583ec30dc6209aa25c",
+        "url": "https://api.github.com/repos/MDIAZ88/angular-lab/commits/c0db7a006577188a3e8931583ec30dc6209aa25c",
+        "html_url": "https://github.com/MDIAZ88/angular-lab/commit/c0db7a006577188a3e8931583ec30dc6209aa25c"
+      },
+      {
+        "sha": "b08e47ef9dd9b0cab4eb1f7d31105c751b2d107a",
+        "url": "https://api.github.com/repos/MDIAZ88/angular-lab/commits/b08e47ef9dd9b0cab4eb1f7d31105c751b2d107a",
+        "html_url": "https://github.com/MDIAZ88/angular-lab/commit/b08e47ef9dd9b0cab4eb1f7d31105c751b2d107a"
+      }
+    ]
+  }
+]

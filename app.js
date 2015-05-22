@@ -7,6 +7,8 @@ var express = require('express'),
     cors=require('cors'),
     app = express();
 
+    //app.set('port',3000);
+
 if (app.get('env') === 'production') {
   console.log('Production environment');
   app.use(function(req,res){
@@ -22,10 +24,11 @@ if (app.get('env') === 'development') {
   app.use('/', routes);
 }
 
+
+
+
 module.exports = app;
 
-http.createServer(app).listen(app.get('port'), function () {
-  console.log('Express server listening on port ' + app.get('port'));
-});
-
-
+//http.createServer(app).listen(app.get('port'), function () {
+  //console.log('Express server listening on port ' + app.get('port'));
+//});
