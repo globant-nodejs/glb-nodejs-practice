@@ -5,7 +5,7 @@ replyReposJson=require('./reply/repos.json'),
 replyCommitJson=require('./reply/commits.json'),
 gitHubService=require('../src/services/githubService.js');
 
-describe('GithubService Service Test/', function(){
+describe('Github Service Tests/', function(){
   beforeEach(function(done) {
     scope = null;
     nock.cleanAll();
@@ -42,7 +42,7 @@ describe('GithubService Service Test/', function(){
   });
 
   describe('Get Commits By Repostories Test/',function(){
-    it('Should be equal to the first Angular-lab commit', function(done){      
+    it('Should Be Equal To  Angular-lab Commit', function(done){      
       var scope = nock('https://api.github.com', {
         reqheaders: {
           'user-agent': 'node.js'
