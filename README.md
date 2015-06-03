@@ -1,6 +1,6 @@
 # Globant NodeJS practice project
 
-El objetivo es armar una API para poder mostrar los respositorios de un usuario y su información en la aplicacion frontend especificada en [glb-angularjs-practice](https://github.com/lfantone/glb-angularjs-practice)
+El objetivo es armar una API para poder mostrar los respositorios de un usuario y su información en la aplicación frontend especificada en [glb-angularjs-practice](https://github.com/lfantone/glb-angularjs-practice)
 
 ## Server side (API)
 
@@ -15,7 +15,7 @@ El objetivo es armar una API para poder mostrar los respositorios de un usuario 
 
 ### Criterios de aceptación:
 * todos los endpoints deben devolver un HAL+JSON y deben contener toda la informacion que devuelve github
-* todos los endpoints deben tener tests donde se verifiquen los casos de exito y de falla (considerar tambien los casos en que no se pueda establecer una conexion con la api github)
+* todos los endpoints deben tener tests donde se verifiquen los casos de éxito y de falla (considerar también los casos en que no se pueda establecer una conexión con la API de Github)
 * Los test se deben ejecutar con grunt
 
 ### Tools
@@ -23,6 +23,6 @@ El objetivo es armar una API para poder mostrar los respositorios de un usuario 
 * Express
 * Hal
 * Async o Q (promises)
-* grunt como task runner
+* Grunt como task runner
 
-No hay limitaciones en cuanto a la utilizacion de herramientas, librerias o plugins adicionales.
+No hay limitaciones en cuanto a la utilización de herramientas, librerias o plugins adicionales.
