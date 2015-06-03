@@ -17,10 +17,11 @@ El objetivo es armar una API para poder mostrar los respositorios de un usuario 
 * todos los endpoints deben tener tests donde se verifiquen los casos de exito y de falla (considerar tambien los casos en que no se pueda establecer una conexion con la api github)
 * Los test se deben ejecutar con grunt
 
-### Toolsg
+### Tools
 * NodeJs
 * Express
 * Hal
+* Async o Q (promises)
 * grunt como task runner
 
 No hay limitaciones en cuanto a la utilizacion de herramientas, librerias o plugins adicionales.
