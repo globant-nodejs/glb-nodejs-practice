@@ -6,11 +6,12 @@ El objetivo es armar una API para poder mostrar los respositorios de un usuario 
 
 ### Implementar los siguientes endpoints:
 * obtener los repositorios de un usuario
-* obtener la informacion de un repositorio del usuario
+* obtener la información de un repositorio del usuario
 * obtener el listado de commits de un repositorio
-* obtener la informacion de un commit especifico dentro de un repositorio
+* obtener la información de un commit especifico dentro de un repositorio
 * obtener el listado de pull request de un repositorio
-* obtener la informacion de una pull request especifica dentro de un repositorio
+* obtener la información de una pull request especifica dentro de un 
+* obtener la información de los commits y pull request dado un repositorio.
 
 ### Criterios de aceptación:
 * todos los endpoints deben devolver un HAL+JSON y deben contener toda la informacion que devuelve github
