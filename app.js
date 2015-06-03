@@ -1,14 +1,15 @@
 var express = require('express'),
-path = require('path'),
-http = require('http'),
-debug = require('debug')('testApp:server'),
-logger = require('morgan'),
-bodyParser = require('body-parser'),
-index = require('./src/index.js'),
-cors=require('cors'),
-app = express();
+    path = require('path'),
+    http = require('http'),
+    debug = require('debug')('testApp:server'),
+    logger = require('morgan'),
+    bodyParser = require('body-parser'),
+    routes = require('./src/routes.js'),
+    cors=require('cors'),
+    app = express();
 
-app.set('port',3000);
+    app.set('port',3000);
+>>>>>>> b47982110c068786c368533770e3971770b00470
 
 
 if (app.get('env') === 'production') {
@@ -23,9 +24,8 @@ if (app.get('env') === 'development') {
   app.use(logger('dev'));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
-  app.use('/', index);
+  app.use('/', routes);
 }
-
 
 module.exports = app;
 
