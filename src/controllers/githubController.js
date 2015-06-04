@@ -51,7 +51,7 @@ getOneCommit:function(req,res){
         var halres=new hal.Resource({author:objJSON.commit.author.name,
           date:objJSON.commit.author.date,message:objJSON.commit.message,
           url:objJSON.html_url,file:objJSON.files[0].filename,id:'HAL-JSON',type:'Commit',
-          origin: "Github"},"/"+req.params.name+"/"+req.params.repo); 
+          origin: "Github"},"/"+req.params.name+"/"+req.params.repo+"/"+req.params.sha); 
         var Files=[];
         var objfile=objJSON.files;
         for (i = 0; i < objJSON.files.length; i++) {
@@ -87,17 +87,6 @@ getCommits:function(req,res){
     }
   });
 },
-getOnePullRequest:function(req,res){
-  githubService.getSinglePullRequest(req.params.name,req.params.repo,req.params.number,
-    function (error,objJSON){
-      if(!error){
-        res.send(objJSON);
-      }
-      else{
-        res.json(error);
-      }
-    });
-},
 getPullRequest:function(req,res){
   githubService.getPullRequestByRepository(req.params.name,req.params.repo,function (error,objJSON){
       if(!error){
@@ -108,7 +97,7 @@ getPullRequest:function(req,res){
           pullrequests[i] = new hal.Resource({
             id:objJSON[i].id,number:objJSON[i].number,title: objJSON[i].title,
             state: objJSON[i].state,url:objJSON[i].html_url
-          }, "/"+req.params.name+"/"+objJSON[i].title+"/"+objJSON[i].number);
+          }, "/"+req.params.name+"/"+req.params.repo+"/pulls/"+objJSON[i].number);
         }
         halres.embed("Pullrequest", pullrequests);
         res.json(halres.toJSON());
