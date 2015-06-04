@@ -53,7 +53,7 @@ module.exports={
         }
       }); 
   },
-  getPullRequestByRepositorie:function(username,repository,callback){
+  getPullRequestByRepository:function(username,repository,callback){
     request({url:'https://api.github.com/repos/' +username +
       '/'+repository+'/pulls', headers: {'user-agent': 'node.js'},json:true},
       function(error,response,body){

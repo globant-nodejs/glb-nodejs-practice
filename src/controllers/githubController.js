@@ -5,11 +5,12 @@ module.exports={
   getRepository:function(req, res){      
     githubService.getSingleRepository(req.params.name,req.params.repo,function (error,objJSON) {
       if(!error){
-        var halres=new hal.Resource({name:objJSON.name,date:objJSON.created_at,stars:objJSON.stargazers_count,
-            fork:objJSON.fork,fork_count:objJSON.forks_count,
-            language:objJSON.language,watchers:objJSON.watchers,
-            description:objJSON.description,url:objJSON.html_url,id:'HAL-JSON',Type:'Repository',origin: "Github",
-          status: "Public",total: objJSON.length},"/"+req.params.name+"/"+req.params.repo); 
+        var halres=new hal.Resource({name:objJSON.name,date:objJSON.created_at,
+          stars:objJSON.stargazers_count,
+          fork:objJSON.fork,fork_count:objJSON.forks_count,
+          language:objJSON.language,watchers:objJSON.watchers,
+          description:objJSON.description,url:objJSON.html_url,id:'HAL-JSON',Type:'Repository',
+          origin: "Github",status: "Public"},"/"+req.params.name+"/"+req.params.repo); 
         res.json(halres.toJSON());
       }
       else{
@@ -19,7 +20,7 @@ module.exports={
     });     
   },
 
-   getRepositories:function(req, res){      
+  getRepositories:function(req, res){      
     githubService.getRepositoriesByUser(req.params.name, function (error,objJSON) {
       if(!error){
         var halres=new hal.Resource({id:'HAL-JSON',name:'Repositories',origin: "Github",
@@ -43,41 +44,52 @@ module.exports={
       }
 
     });     
-  },
-  getCommit:function(req,res){
-    githubService.getSingleCommit(req.params.name,req.params.repo,req.params.sha,function (error,objJSON){
+},
+getOneCommit:function(req,res){
+  githubService.getSingleCommit(req.params.name,req.params.repo,req.params.sha,
+    function (error,objJSON){
       if(!error){
-        
-        res.send(objJSON);
-      }
-      else{
-        res.json("Github API: "+error);
-      }
-    });
-  },
-  getCommits:function(req,res){
-    githubService.getCommitsByRepository(req.params.name,req.params.repo,function (error,objJSON){
-      if(!error){
-        var halres=new hal.Resource({id:'HAL-JSON',name:'Commits',origin: "Github",
-          total: objJSON.length},"/"+req.params.name+"/"+req.params.repo+"/commits"); 
-        var commits=[];
-        for (i = 0; i < objJSON.length; i++) {
-          commits[i] = new hal.Resource({
-            sha:objJSON[i].sha,Commit_Date:objJSON[i].commit.author.date,
-            Author:objJSON[i].commit.author.name,Message: objJSON[i].commit.message,
-            url:objJSON[i].html_url
-          }, "/"+req.params.name+"/"+objJSON[i].author.login+"/"+objJSON[i].commit.author.name);
+        var halres=new hal.Resource({author:objJSON.commit.author.name,
+          date:objJSON.commit.author.date,message:objJSON.commit.message,
+          url:objJSON.html_url,file:objJSON.files[0].filename,id:'HAL-JSON',type:'Commit',
+          origin: "Github"},"/"+req.params.name+"/"+req.params.repo); 
+        var Files=[];
+        var objfile=objJSON.files;
+        for (i = 0; i < objJSON.files.length; i++) {
+          Files[i] = new hal.Resource({filename:objfile[i].filename,status:objfile[i].status,
+            additions:objfile[i].additions,deletions:objfile[i].deletions,
+            changes:objfile[i].changes});
         }
-        halres.embed("Commits", commits);
+        halres.embed("Files", Files);
         res.json(halres.toJSON());
       }
       else{
-        res.json("Github API: "+error);
+        res.json(error);
       }
     });
-  },
-  getPullRequest:function(req,res){
-    githubService.getPullRequestByRepositorie(req.params.name,req.params.repo,function (error,objJSON){
+},
+getCommits:function(req,res){
+  githubService.getCommitsByRepository(req.params.name,req.params.repo,function (error,objJSON){
+    if(!error){
+      var halres=new hal.Resource({id:'HAL',name:'HAL+JSON-Test2',origin: "Github",
+        total: objJSON.length},"/"+req.params.name); 
+      var commits=[];
+      for (i = 0; i < objJSON.length; i++) {
+        commits[i] = new hal.Resource({
+          sha:objJSON[i].sha,Commit_Date:objJSON[i].commit.author.date,
+          Author:objJSON[i].commit.author.name,Message: objJSON[i].commit.message
+        }, "/"+req.params.name+"/"+objJSON[i].author.login+"/"+objJSON[i].sha);
+      }
+      halres.embed("Commits", commits);
+      res.json(halres.toJSON());
+    }
+    else{
+      res.json(error);
+    }
+  });
+},
+getPullRequest:function(req,res){
+  githubService.getPullRequestByRepository(req.params.name,req.params.repo,function (error,objJSON){
       if(!error){
         var halres=new hal.Resource({id:'HAL-JSON',name:'Pull-Requests',origin: "Github",
           total: objJSON.length},"/"+req.params.name+"/"+req.params.repo+"/pulls"); 
@@ -92,8 +104,8 @@ module.exports={
         res.json(halres.toJSON());
       }
       else{
-        res.json("Github API: "+error);
+        res.json(error);
       }
     });
-  }
+}
 };
