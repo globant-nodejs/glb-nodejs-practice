@@ -53,7 +53,7 @@ module.exports={
         for (i = 0; i < objJSON.length; i++) {
           pullrequests[i] = new hal.Resource({
             id:objJSON[i].id,number:objJSON[i].number,title: objJSON[i].title,
-            state: objJSON[i].state,url:objJSON[i].url
+            state: objJSON[i].state,url:objJSON[i].html_url
           }, "/"+req.params.name+"/"+objJSON[i].id+"/"+objJSON[i].number);
         }
         halres.embed("Pullrequest", pullrequests);
