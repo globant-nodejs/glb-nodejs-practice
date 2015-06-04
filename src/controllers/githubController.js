@@ -88,6 +88,17 @@ getCommits:function(req,res){
     }
   });
 },
+getOnePullRequest:function(req,res){
+  githubService.getSinglePullRequest(req.params.name,req.params.repo,req.params.number,
+    function (error,objJSON){
+      if(!error){
+        res.send(objJSON);
+      }
+      else{
+        res.json(error);
+      }
+    });
+}
 getPullRequest:function(req,res){
   githubService.getPullRequestByRepository(req.params.name,req.params.repo,function (error,objJSON){
       if(!error){
