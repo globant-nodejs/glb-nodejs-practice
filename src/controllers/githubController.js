@@ -19,7 +19,7 @@ module.exports={
         res.json(halres.toJSON());
       }
       else{
-        res.json(error);
+        res.json("Github API: "+error);
       }
 
     });     
@@ -28,19 +28,20 @@ module.exports={
     githubService.getCommitsByRepository(req.params.name,req.params.repo,function (error,objJSON){
       if(!error){
         var halres=new hal.Resource({id:'HAL-JSON',name:'Commits',origin: "Github",
-          total: objJSON.length},"/"+req.params.name); 
+          total: objJSON.length},"/"+req.params.name+"/"+req.params.repo+"/commits"); 
         var commits=[];
         for (i = 0; i < objJSON.length; i++) {
           commits[i] = new hal.Resource({
             sha:objJSON[i].sha,Commit_Date:objJSON[i].commit.author.date,
-            Author:objJSON[i].commit.author.name,Message: objJSON[i].commit.message
+            Author:objJSON[i].commit.author.name,Message: objJSON[i].commit.message,
+            url:objJSON[i].html_url
           }, "/"+req.params.name+"/"+objJSON[i].author.login+"/"+objJSON[i].commit.author.name);
         }
         halres.embed("Commits", commits);
         res.json(halres.toJSON());
       }
       else{
-        res.json(error);
+        res.json("Github API: "+error);
       }
     });
   },
@@ -48,19 +49,19 @@ module.exports={
     githubService.getPullRequestByRepositorie(req.params.name,req.params.repo,function (error,objJSON){
       if(!error){
         var halres=new hal.Resource({id:'HAL-JSON',name:'Pull-Requests',origin: "Github",
-          total: objJSON.length},"/"+req.params.name); 
+          total: objJSON.length},"/"+req.params.name+"/"+req.params.repo+"/pulls"); 
         var pullrequests=[];
         for (i = 0; i < objJSON.length; i++) {
           pullrequests[i] = new hal.Resource({
             id:objJSON[i].id,number:objJSON[i].number,title: objJSON[i].title,
             state: objJSON[i].state,url:objJSON[i].html_url
-          }, "/"+req.params.name+"/"+objJSON[i].id+"/"+objJSON[i].number);
+          }, "/"+req.params.name+"/"+objJSON[i].title+"/"+objJSON[i].number);
         }
         halres.embed("Pullrequest", pullrequests);
         res.json(halres.toJSON());
       }
       else{
-        res.json(error);
+        res.json("Github API: "+error);
       }
     });
   }
