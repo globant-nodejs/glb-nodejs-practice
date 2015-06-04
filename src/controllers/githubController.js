@@ -46,8 +46,7 @@ module.exports={
     });     
 },
 getOneCommit:function(req,res){
-  githubService.getSingleCommit(req.params.name,req.params.repo,req.params.sha,
-    function (error,objJSON){
+  githubService.getSingleCommit(req.params.name,req.params.repo,req.params.sha,function (error,objJSON){
       if(!error){
         var halres=new hal.Resource({author:objJSON.commit.author.name,
           date:objJSON.commit.author.date,message:objJSON.commit.message,
@@ -98,7 +97,7 @@ getOnePullRequest:function(req,res){
         res.json(error);
       }
     });
-}
+},
 getPullRequest:function(req,res){
   githubService.getPullRequestByRepository(req.params.name,req.params.repo,function (error,objJSON){
       if(!error){
