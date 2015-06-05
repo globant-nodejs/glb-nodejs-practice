@@ -10,7 +10,7 @@ module.exports={
           callback(error,objJSON);
         }
         else{
-          callback(error,{});
+          callback({Error:response.statusCode,Message:"Repository "+repository+" NOT-Found"});
         }
       });      
   },
@@ -23,7 +23,7 @@ module.exports={
           callback(error,objJSON);
         }
         else{
-          callback(error,{});
+          callback({Error:response.statusCode,Message:"Username "+username+" NOT-Found"});
         }
       });      
   },
@@ -36,7 +36,7 @@ module.exports={
           callback(error,objJSON);
         }
         else{
-          callback(error,{});
+          callback({Error:response.statusCode,Message:"Commit NOT-Found please check the URL"});
         }
       }); 
   },
@@ -49,7 +49,7 @@ module.exports={
           callback(error,objJSON);
         }
         else{
-          callback(error,{});
+          callback({Error:response.statusCode,Message:"Commits NOT-Found please check the URL"});
         }
       }); 
   },
@@ -62,7 +62,7 @@ module.exports={
           callback(error,objJSON);
         }
         else{
-          callback(error,{});
+          callback({Error:response.statusCode,Message:"Pull Request NOT-Found please check the URL"});
         }
       }); 
   },
@@ -75,7 +75,8 @@ module.exports={
           callback(error,objJSON);
         }
         else{
-          callback(error,{});
+          console.log(error);
+          callback({Error:response.statusCode,Message:"Pull Requests NOT-Found please check the URL"});
         }
       }); 
   }
