@@ -12,7 +12,8 @@ module.exports={
           description:objJSON.description,url:objJSON.html_url,id:'HAL-JSON',Type:'Repository',
           origin: "Github",status: "Public"},"/"+req.params.name+"/"+req.params.repo); 
         halres.link('repositories','/'+req.params.name);
-        halres.link('pull-requests',"/"+req.params.name+"/"+req.params.repo+"/pulls/");
+        halres.link('commits',"/"+req.params.name+"/"+req.params.repo+"/commits");
+        halres.link('pull-requests',"/"+req.params.name+"/"+req.params.repo+"/pulls");
         res.json(halres.toJSON());
       }
       else{
@@ -64,7 +65,7 @@ getOneCommit:function(req,res){
             changes:objfile[i].changes});
         }
         halres.embed("Files", Files);
-         halres.link('commits',"/"+req.params.name+"/"+req.params.repo+"/commits");
+        halres.link('commits',"/"+req.params.name+"/"+req.params.repo+"/commits");
         halres.link('repository',"/"+req.params.name+"/"+req.params.repo);
         halres.link('repositories',"/"+req.params.name);
         res.json(halres.toJSON());
@@ -88,6 +89,7 @@ getCommits:function(req,res){
         }, "/"+req.params.name+"/"+req.params.repo+"/commits/"+objJSON[i].sha);
       }
       halres.embed("Commits", commits);
+      halres.link('pull-requests',"/"+req.params.name+"/"+req.params.repo+"/pulls");
       halres.link('repository',"/"+req.params.name+"/"+req.params.repo);
       halres.link('repositories',"/"+req.params.name);
       res.json(halres.toJSON());
@@ -131,6 +133,7 @@ getPullRequest:function(req,res){
           }, "/"+req.params.name+"/"+req.params.repo+"/pulls/"+objJSON[i].number);
         }
         halres.embed("Pullrequest", pullrequests);
+        halres.link('commits',"/"+req.params.name+"/"+req.params.repo+"/commits");
         halres.link('repository',"/"+req.params.name+"/"+req.params.repo);
         halres.link('repositories',"/"+req.params.name);
         res.json(halres.toJSON());
