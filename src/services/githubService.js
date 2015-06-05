@@ -53,6 +53,19 @@ module.exports={
         }
       }); 
   },
+  getSinglePullRequest:function(username,repository,pullnumber,callback){
+    request({url:'https://api.github.com/repos/' +username +
+      '/'+repository+'/pulls/'+pullnumber, headers: {'user-agent': 'node.js'},json:true},
+      function(error,response,body){
+        if (!error && response.statusCode == 200) {
+          var objJSON=response.body;
+          callback(error,objJSON);
+        }
+        else{
+          callback(error,{});
+        }
+      }); 
+  },
   getPullRequestByRepository:function(username,repository,callback){
     request({url:'https://api.github.com/repos/' +username +
       '/'+repository+'/pulls', headers: {'user-agent': 'node.js'},json:true},
