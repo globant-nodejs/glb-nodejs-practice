@@ -1,6 +1,5 @@
-//require('./controlParamTest.js');
 require('./githubServiceTest.js');
-//require('./githubControllerTest.js');
+require('./githubControllerTest.js');
 
 
 

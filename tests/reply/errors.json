@@ -1,0 +1,27 @@
+[
+	{
+		"Error":404,
+		"Message":"Repository NOT-Found please check the URL"
+	},
+	{
+		"Error":404,
+		"Message":"Commit NOT-Found please check the URL"
+	},
+	{
+		"Error":404,
+		"Message":"Pull Request NOT-Found please check the URL"
+	},
+	{
+		"Error":404,
+		"Message":"Username NOT-Found"
+	},
+	{
+		"Error":404,
+		"Message":"Commits NOT-Found please check the URL"
+	},
+	{
+		"Error":404,
+		"Message":"Pull Requests NOT-Found please check the URL"
+	}
+
+]

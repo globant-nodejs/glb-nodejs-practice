@@ -79,7 +79,7 @@ getOneCommit:function(req,res){
 getCommits:function(req,res){
   githubService.getCommitsByRepository(req.params.name,req.params.repo,function (error,objJSON){
     if(!error){
-      var halres=new hal.Resource({id:'HAL',name:'HAL+JSON-Test2',origin: "Github",type:'Commits',
+      var halres=new hal.Resource({id:'HAL',name:'HAL+JSON',origin: "Github",type:'Commits',
         total: objJSON.length},"/"+req.params.name+"/"+req.params.repo+"/commits"); 
       var commits=[];
       for (i = 0; i < objJSON.length; i++) {

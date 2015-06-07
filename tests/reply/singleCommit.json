@@ -1,0 +1,95 @@
+
+{
+  "sha": "4dff4c82a6e8a7fdf5e63c5513ae581746c404da",
+  "commit": {
+    "author": {
+      "name": "Tim Jacobi",
+      "email": "timjacobi@users.noreply.github.com",
+      "date": "2015-03-02T15:47:58Z"
+    },
+    "committer": {
+      "name": "Tim Jacobi",
+      "email": "timjacobi@users.noreply.github.com",
+      "date": "2015-03-02T15:47:58Z"
+    },
+    "message": "Merge pull request #7 from TehShrike/patch-1\n\nAdding \"Make Your Own AngularJS: Scopes and Digest\"",
+    "tree": {
+      "sha": "5041c4b92c4c377c840bff467e81e1591ef1258d",
+      "url": "https://api.github.com/repos/MDIAZ88/angular-education/git/trees/5041c4b92c4c377c840bff467e81e1591ef1258d"
+    },
+    "url": "https://api.github.com/repos/MDIAZ88/angular-education/git/commits/4dff4c82a6e8a7fdf5e63c5513ae581746c404da",
+    "comment_count": 0
+  },
+  "url": "https://api.github.com/repos/MDIAZ88/angular-education/commits/4dff4c82a6e8a7fdf5e63c5513ae581746c404da",
+  "html_url": "https://github.com/MDIAZ88/angular-education/commit/4dff4c82a6e8a7fdf5e63c5513ae581746c404da",
+  "comments_url": "https://api.github.com/repos/MDIAZ88/angular-education/commits/4dff4c82a6e8a7fdf5e63c5513ae581746c404da/comments",
+  "author": {
+    "login": "timjacobi",
+    "id": 2023165,
+    "avatar_url": "https://avatars.githubusercontent.com/u/2023165?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/timjacobi",
+    "html_url": "https://github.com/timjacobi",
+    "followers_url": "https://api.github.com/users/timjacobi/followers",
+    "following_url": "https://api.github.com/users/timjacobi/following{/other_user}",
+    "gists_url": "https://api.github.com/users/timjacobi/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/timjacobi/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/timjacobi/subscriptions",
+    "organizations_url": "https://api.github.com/users/timjacobi/orgs",
+    "repos_url": "https://api.github.com/users/timjacobi/repos",
+    "events_url": "https://api.github.com/users/timjacobi/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/timjacobi/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "timjacobi",
+    "id": 2023165,
+    "avatar_url": "https://avatars.githubusercontent.com/u/2023165?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/timjacobi",
+    "html_url": "https://github.com/timjacobi",
+    "followers_url": "https://api.github.com/users/timjacobi/followers",
+    "following_url": "https://api.github.com/users/timjacobi/following{/other_user}",
+    "gists_url": "https://api.github.com/users/timjacobi/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/timjacobi/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/timjacobi/subscriptions",
+    "organizations_url": "https://api.github.com/users/timjacobi/orgs",
+    "repos_url": "https://api.github.com/users/timjacobi/repos",
+    "events_url": "https://api.github.com/users/timjacobi/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/timjacobi/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "d3e91e37e75b9ef73bdacd8354afa0630aeb7027",
+      "url": "https://api.github.com/repos/MDIAZ88/angular-education/commits/d3e91e37e75b9ef73bdacd8354afa0630aeb7027",
+      "html_url": "https://github.com/MDIAZ88/angular-education/commit/d3e91e37e75b9ef73bdacd8354afa0630aeb7027"
+    },
+    {
+      "sha": "d3eae8b9de79db64576ed31d9129a522a003e898",
+      "url": "https://api.github.com/repos/MDIAZ88/angular-education/commits/d3eae8b9de79db64576ed31d9129a522a003e898",
+      "html_url": "https://github.com/MDIAZ88/angular-education/commit/d3eae8b9de79db64576ed31d9129a522a003e898"
+    }
+  ],
+  "stats": {
+    "total": 1,
+    "additions": 1,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "c8ccab9f565356a34c0db33daa904d45174dae15",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 0,
+      "changes": 1,
+      "blob_url": "https://github.com/MDIAZ88/angular-education/blob/4dff4c82a6e8a7fdf5e63c5513ae581746c404da/README.md",
+      "raw_url": "https://github.com/MDIAZ88/angular-education/raw/4dff4c82a6e8a7fdf5e63c5513ae581746c404da/README.md",
+      "contents_url": "https://api.github.com/repos/MDIAZ88/angular-education/contents/README.md?ref=4dff4c82a6e8a7fdf5e63c5513ae581746c404da",
+      "patch": "@@ -60,6 +60,7 @@ If you want to add a resource please open a new issue or comment on an existing\n * [Advanced Testing and Debugging in AngularJS](http://www.yearofmoo.com/2013/09/advanced-testing-and-debugging-in-angularjs.html)\n \n #### Under the hood\n+* [Make Your Own AngularJS: Scopes and Digest](http://teropa.info/blog/2013/11/03/make-your-own-angular-part-1-scopes-and-digest.html)\n * [Compile process](http://www.slideshare.net/EyalV/angular-js-compile-process)\n * [The nitty-gritty of compile and link functions inside AngularJS directives](http://www.jvandemo.com/the-nitty-gritty-of-compile-and-link-functions-inside-angularjs-directives/?utm_source=twitterfeed&utm_medium=twitter)\n * [AngularJS: The Provider Subsystem](http://anandmanisankar.com/posts/angularjs-provider-subsystem/)"
+    }
+  ]
+}
