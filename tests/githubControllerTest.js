@@ -8,8 +8,10 @@ commitsHAL=require('./reply/commitsHAL.json'),
 pullrequestsHAL=require('./reply/pullrequestsHAL.json'),
 singlePullHAL=require('./reply/singlePullRequestHAL.json'),
 singleCommitHAL=require('./reply/singleCommitHAL.json'),
+pullsAndCommitsHAL=require('./reply/pullsAndCommitsHAL.json'),
 replyReposJson=require('./reply/repositoriesList.json'),
 replyCommitJson=require('./reply/commitList.json'),
+replyCommitJson2=require('./reply/commitList2.json'),
 replyPullRequestsJson=require('./reply/pullrequestsList.json'),
 replySingleRepository=require('./reply/singleRepository.json'),
 replySingleCommit=require('./reply/singleCommit.json'),
@@ -121,6 +123,28 @@ describe('API glb-nodejs-practice Controller Tests/',function(){
       gitHubController.getRepository({params:{name:'lfantone',repo:'glb-nodejs-practice'}},
         {json:function(response){
         expect(response).to.deep.equal(singleRepoHAL);
+      }});
+    });
+  });
+
+  describe('Get Pull Requests and Commits Together - Async Parallel Function Test/',function(){
+    afterEach(function(done) {
+      gitHubService.getCommitsByRepository.restore();
+      gitHubService.getPullRequestByRepository.restore();
+      done();
+    });
+    it('Should Return a Correct Pulls-Commits-HAL Response',function(){
+
+      var mock=sinon.stub(gitHubService,'getCommitsByRepository',function(username,repository,callback){
+        callback(null,replyCommitJson2);
+      });
+
+      var mock2=sinon.stub(gitHubService,'getPullRequestByRepository',function(username,repository,callback){
+        callback(null,replyPullRequestsJson);
+      });
+
+      gitHubController.getPullsAndCommits({params:{name:'lfantone',repo:'glb-nodejs-practice'}},{json:function(response){
+        expect(response).to.deep.equal(pullsAndCommitsHAL);
       }});
     });
   });

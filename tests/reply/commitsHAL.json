@@ -1,2 +1,102 @@
-
-{"_links":{"self":{"href":"/MDIAZ88/angular-lab/commits"},"pull-requests":{"href":"/MDIAZ88/angular-lab/pulls"},"repository":{"href":"/MDIAZ88/angular-lab"},"repositories":{"href":"/MDIAZ88"}},"_embedded":{"Commits":[{"_links":{"self":{"href":"/MDIAZ88/angular-lab/commits/f10e20d4907e265cd6876bae5506cda074819b2d"}},"sha":"f10e20d4907e265cd6876bae5506cda074819b2d","Commit_Date":"2014-10-31T18:10:09Z","Author":"Esteban S. Abait","Message":"Merge pull request #2 from jvallelunga/master\n\nAnti-Pattern added"},{"_links":{"self":{"href":"/MDIAZ88/angular-lab/commits/b08e47ef9dd9b0cab4eb1f7d31105c751b2d107a"}},"sha":"b08e47ef9dd9b0cab4eb1f7d31105c751b2d107a","Commit_Date":"2014-10-31T18:06:58Z","Author":"jvallelunga","Message":"Update README.md\n\nAnti-Pattern added"},{"_links":{"self":{"href":"/MDIAZ88/angular-lab/commits/c0db7a006577188a3e8931583ec30dc6209aa25c"}},"sha":"c0db7a006577188a3e8931583ec30dc6209aa25c","Commit_Date":"2014-04-09T14:21:00Z","Author":"Esteban S. Abait","Message":"Update README.md"},{"_links":{"self":{"href":"/MDIAZ88/angular-lab/commits/bdb7023050ce74b42752ce671df9cb6a8793ca82"}},"sha":"bdb7023050ce74b42752ce671df9cb6a8793ca82","Commit_Date":"2014-02-19T13:21:43Z","Author":"Esteban S. Abait","Message":"Update README.md"},{"_links":{"self":{"href":"/MDIAZ88/angular-lab/commits/163cb9de9abcc719577f67f29648d04b56960dd3"}},"sha":"163cb9de9abcc719577f67f29648d04b56960dd3","Commit_Date":"2014-02-19T13:21:28Z","Author":"Esteban S. Abait","Message":"Update README.md"},{"_links":{"self":{"href":"/MDIAZ88/angular-lab/commits/950f997d698520b248c3cba3b0e73227beab9a34"}},"sha":"950f997d698520b248c3cba3b0e73227beab9a34","Commit_Date":"2014-02-19T13:19:17Z","Author":"Esteban S. Abait","Message":"Updated README.md"},{"_links":{"self":{"href":"/MDIAZ88/angular-lab/commits/ba4d6f6e95368cb3827030626ebcbc3efeafa23c"}},"sha":"ba4d6f6e95368cb3827030626ebcbc3efeafa23c","Commit_Date":"2014-02-17T18:28:59Z","Author":"Esteban S. Abait","Message":"Initial commit"}]},"id":"HAL","name":"HAL+JSON","origin":"Github","type":"Commits","total":7}
+{
+    "_embedded": {
+        "Commits": [
+            {
+                "Author": "Esteban S. Abait",
+                "Commit_Date": "2014-10-31T18:10:09Z",
+                "Message": "Merge pull request #2 from jvallelunga/master\n\nAnti-Pattern added",
+                "_links": {
+                    "self": {
+                        "href": "/MDIAZ88/angular-lab/commits/f10e20d4907e265cd6876bae5506cda074819b2d"
+                    }
+                },
+                "sha": "f10e20d4907e265cd6876bae5506cda074819b2d"
+            },
+            {
+                "Author": "jvallelunga",
+                "Commit_Date": "2014-10-31T18:06:58Z",
+                "Message": "Update README.md\n\nAnti-Pattern added",
+                "_links": {
+                    "self": {
+                        "href": "/MDIAZ88/angular-lab/commits/b08e47ef9dd9b0cab4eb1f7d31105c751b2d107a"
+                    }
+                },
+                "sha": "b08e47ef9dd9b0cab4eb1f7d31105c751b2d107a"
+            },
+            {
+                "Author": "Esteban S. Abait",
+                "Commit_Date": "2014-04-09T14:21:00Z",
+                "Message": "Update README.md",
+                "_links": {
+                    "self": {
+                        "href": "/MDIAZ88/angular-lab/commits/c0db7a006577188a3e8931583ec30dc6209aa25c"
+                    }
+                },
+                "sha": "c0db7a006577188a3e8931583ec30dc6209aa25c"
+            },
+            {
+                "Author": "Esteban S. Abait",
+                "Commit_Date": "2014-02-19T13:21:43Z",
+                "Message": "Update README.md",
+                "_links": {
+                    "self": {
+                        "href": "/MDIAZ88/angular-lab/commits/bdb7023050ce74b42752ce671df9cb6a8793ca82"
+                    }
+                },
+                "sha": "bdb7023050ce74b42752ce671df9cb6a8793ca82"
+            },
+            {
+                "Author": "Esteban S. Abait",
+                "Commit_Date": "2014-02-19T13:21:28Z",
+                "Message": "Update README.md",
+                "_links": {
+                    "self": {
+                        "href": "/MDIAZ88/angular-lab/commits/163cb9de9abcc719577f67f29648d04b56960dd3"
+                    }
+                },
+                "sha": "163cb9de9abcc719577f67f29648d04b56960dd3"
+            },
+            {
+                "Author": "Esteban S. Abait",
+                "Commit_Date": "2014-02-19T13:19:17Z",
+                "Message": "Updated README.md",
+                "_links": {
+                    "self": {
+                        "href": "/MDIAZ88/angular-lab/commits/950f997d698520b248c3cba3b0e73227beab9a34"
+                    }
+                },
+                "sha": "950f997d698520b248c3cba3b0e73227beab9a34"
+            },
+            {
+                "Author": "Esteban S. Abait",
+                "Commit_Date": "2014-02-17T18:28:59Z",
+                "Message": "Initial commit",
+                "_links": {
+                    "self": {
+                        "href": "/MDIAZ88/angular-lab/commits/ba4d6f6e95368cb3827030626ebcbc3efeafa23c"
+                    }
+                },
+                "sha": "ba4d6f6e95368cb3827030626ebcbc3efeafa23c"
+            }
+        ]
+    },
+    "_links": {
+        "pull-requests": {
+            "href": "/MDIAZ88/angular-lab/pulls"
+        },
+        "repositories": {
+            "href": "/MDIAZ88"
+        },
+        "repository": {
+            "href": "/MDIAZ88/angular-lab"
+        },
+        "self": {
+            "href": "/MDIAZ88/angular-lab/commits"
+        }
+    },
+    "id": "HAL",
+    "name": "HAL+JSON",
+    "origin": "Github",
+    "total": 7,
+    "type": "Commits"
+}

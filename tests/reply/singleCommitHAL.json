@@ -1,2 +1,35 @@
-
-{"_links":{"self":{"href":"/MDIAZ88/angular-education/commits/4dff4c82a6e8a7fdf5e63c5513ae581746c404da"},"commits":{"href":"/MDIAZ88/angular-education/commits"},"repository":{"href":"/MDIAZ88/angular-education"},"repositories":{"href":"/MDIAZ88"}},"_embedded":{"Files":[{"filename":"README.md","status":"modified","additions":1,"deletions":0,"changes":1}]},"author":"Tim Jacobi","date":"2015-03-02T15:47:58Z","message":"Merge pull request #7 from TehShrike/patch-1\n\nAdding \"Make Your Own AngularJS: Scopes and Digest\"","url":"https://github.com/MDIAZ88/angular-education/commit/4dff4c82a6e8a7fdf5e63c5513ae581746c404da","file":"README.md","id":"HAL-JSON","type":"Commit","origin":"Github"}
+{
+    "_embedded": {
+        "Files": [
+            {
+                "additions": 1,
+                "changes": 1,
+                "deletions": 0,
+                "filename": "README.md",
+                "status": "modified"
+            }
+        ]
+    },
+    "_links": {
+        "commits": {
+            "href": "/MDIAZ88/angular-education/commits"
+        },
+        "repositories": {
+            "href": "/MDIAZ88"
+        },
+        "repository": {
+            "href": "/MDIAZ88/angular-education"
+        },
+        "self": {
+            "href": "/MDIAZ88/angular-education/commits/4dff4c82a6e8a7fdf5e63c5513ae581746c404da"
+        }
+    },
+    "author": "Tim Jacobi",
+    "date": "2015-03-02T15:47:58Z",
+    "file": "README.md",
+    "id": "HAL-JSON",
+    "message": "Merge pull request #7 from TehShrike/patch-1\n\nAdding \"Make Your Own AngularJS: Scopes and Digest\"",
+    "origin": "Github",
+    "type": "Commit",
+    "url": "https://github.com/MDIAZ88/angular-education/commit/4dff4c82a6e8a7fdf5e63c5513ae581746c404da"
+}

@@ -1,2 +1,29 @@
-
-{"_links":{"self":{"href":"/lfantone/glb-nodejs-practice"},"repositories":{"href":"/lfantone"},"commits":{"href":"/lfantone/glb-nodejs-practice/commits"},"pull-requests":{"href":"/lfantone/glb-nodejs-practice/pulls"}},"name":"glb-nodejs-practice","date":"2015-05-20T13:16:49Z","stars":0,"fork":false,"fork_count":0,"language":"JavaScript","watchers":0,"description":"Globant NodeJS practice project","url":"https://github.com/lfantone/glb-nodejs-practice","id":"HAL-JSON","Type":"Repository","origin":"Github","status":"Public"}
+{
+    "Type": "Repository",
+    "_links": {
+        "commits": {
+            "href": "/lfantone/glb-nodejs-practice/commits"
+        },
+        "pull-requests": {
+            "href": "/lfantone/glb-nodejs-practice/pulls"
+        },
+        "repositories": {
+            "href": "/lfantone"
+        },
+        "self": {
+            "href": "/lfantone/glb-nodejs-practice"
+        }
+    },
+    "date": "2015-05-20T13:16:49Z",
+    "description": "Globant NodeJS practice project",
+    "fork": false,
+    "fork_count": 0,
+    "id": "HAL-JSON",
+    "language": "JavaScript",
+    "name": "glb-nodejs-practice",
+    "origin": "Github",
+    "stars": 0,
+    "status": "Public",
+    "url": "https://github.com/lfantone/glb-nodejs-practice",
+    "watchers": 0
+}
