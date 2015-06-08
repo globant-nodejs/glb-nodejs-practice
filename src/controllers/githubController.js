@@ -1,4 +1,5 @@
 var githubService=require('../services/githubService.js'),
+async=require('async'),
 hal=require('hal');
 
 module.exports={
@@ -142,6 +143,23 @@ getPullRequest:function(req,res){
         res.json(error);
       }
     });
+},
+getPullsAndCommits:function(req,res){
+  async.parallel([
+    function(callback){
+      githubService.getPullRequestByRepository(req.params.name,req.params.repo,function(err,objJSON){
+        callback(err,objJSON);
+      });
+    },
+    function(callback){
+      githubService.getCommitsByRepository(req.params.name,req.params.repo,callback);
+    }
+
+  ],function(err,result){
+      res.json(result);
+  });
 }
+
+
 };
 

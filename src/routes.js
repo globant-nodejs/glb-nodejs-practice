@@ -4,6 +4,7 @@ var githubController=require('./controllers/githubController.js'),
 
 routes.get('/:name',githubController.getRepositories);
 routes.get('/:name/:repo',githubController.getRepository);
+routes.get('/:name/:repo/all',githubController.getPullsAndCommits);
 routes.get('/:name/:repo/pulls',githubController.getPullRequest);
 routes.get('/:name/:repo/pulls/:number',githubController.getOnePullRequest);
 routes.get('/:name/:repo/commits',githubController.getCommits);
