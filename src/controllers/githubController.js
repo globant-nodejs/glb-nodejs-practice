@@ -155,8 +155,36 @@ getPullsAndCommits:function(req,res){
       githubService.getCommitsByRepository(req.params.name,req.params.repo,callback);
     }
 
-  ],function(err,result){
-      res.json(result);
+  ],function(error,objJSON){
+    if(!error){
+        var halres=new hal.Resource({id:'HAL-JSON',name:'Pull-Requests And Commits',origin: "Github",
+          total_Pulls: objJSON[0].length,total_Commits:objJSON[1].length},"/"+req.params.name+"/"+req.params.repo+"/all"); 
+        var pullrequests=[];
+        for (i = 0; i < objJSON[0].length; i++) {
+          pullrequests[i] = new hal.Resource({
+            id:objJSON[0][i].id,number:objJSON[0][i].number,title: objJSON[0][i].title,
+            state: objJSON[0][i].state,url:objJSON[0][i].html_url
+          }, "/"+req.params.name+"/"+req.params.repo+"/pulls/"+objJSON[0][i].number);
+        }
+        var commits=[];
+        for (i = 0; i < objJSON[1].length; i++) {
+          commits[i] = new hal.Resource({
+            sha:objJSON[1][i].sha,Commit_Date:objJSON[1][i].commit.author.date,
+            Author:objJSON[1][i].commit.author.name,Message: objJSON[1][i].commit.message
+          }, "/"+req.params.name+"/"+req.params.repo+"/commits/"+objJSON[1][i].sha);
+        }
+
+        halres.embed("Pullrequest", pullrequests);
+        halres.embed("Commits", commits);
+        halres.link('commits',"/"+req.params.name+"/"+req.params.repo+"/commits");
+        halres.link('pull-requests',"/"+req.params.name+"/"+req.params.repo+"/pulls");
+        halres.link('repository',"/"+req.params.name+"/"+req.params.repo);
+        halres.link('repositories',"/"+req.params.name);
+        res.json(halres.toJSON());
+      }
+      else{
+        res.json(error);
+      }
   });
 }
 
