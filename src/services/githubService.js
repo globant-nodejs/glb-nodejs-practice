@@ -1,9 +1,10 @@
-var request = require('request');
+var request = require('request'),
+    token=require('../token/token.json');
 
 module.exports={
   getSingleRepository:function(username,repository,callback){
     request({url:'https://api.github.com/repos/'+username+'/'+repository,
-     headers: {'user-agent': 'node.js'},json:true},
+     headers: {'user-agent': 'node.js'},json:true,auth:{'user':token.user,'pass':token.token}},
       function(error,response,body){
         if (!error && response.statusCode == 200) {
           var objJSON=response.body;
@@ -14,9 +15,10 @@ module.exports={
         }
       });      
   },
+
   getRepositoriesByUser:function(username,callback){
     request({url:'https://api.github.com/users/' +username +
-      '/repos', headers: {'user-agent': 'node.js'},json:true},function(error,response,body){
+      '/repos', headers: {'user-agent': 'node.js'},json:true,auth:{'user':token.user,'pass':token.token}},function(error,response,body){
         if (!error && response.statusCode == 200) {
           var objJSON=response.body;
           callback(error,objJSON);
@@ -26,9 +28,10 @@ module.exports={
         }
       });      
   },
+
   getSingleCommit:function(username,repository,sha,callback){
     request({url:'https://api.github.com/repos/' +username +
-      '/'+repository+'/commits/'+sha, headers: {'user-agent': 'node.js'},json:true},
+      '/'+repository+'/commits/'+sha, headers: {'user-agent': 'node.js'},json:true,auth:{'user':token.user,'pass':token.token}},
       function(error,response,body){
         if (!error && response.statusCode == 200) {
           var objJSON=response.body;
@@ -41,7 +44,7 @@ module.exports={
   },
   getCommitsByRepository:function(username,repository,callback){
     request({url:'https://api.github.com/repos/' +username +
-      '/'+repository+'/commits', headers: {'user-agent': 'node.js'},json:true},
+      '/'+repository+'/commits', headers: {'user-agent': 'node.js'},json:true,auth:{'user':token.user,'pass':token.token}},
       function(error,response,body){
         if (!error && response.statusCode == 200) {
           var objJSON=response.body;
@@ -54,7 +57,7 @@ module.exports={
   },
   getSinglePullRequest:function(username,repository,pullnumber,callback){
     request({url:'https://api.github.com/repos/' +username +
-      '/'+repository+'/pulls/'+pullnumber, headers: {'user-agent': 'node.js'},json:true},
+      '/'+repository+'/pulls/'+pullnumber, headers: {'user-agent': 'node.js'},json:true,auth:{'user':token.user,'pass':token.token}},
       function(error,response,body){
         if (!error && response.statusCode == 200) {
           var objJSON=response.body;
@@ -67,7 +70,7 @@ module.exports={
   },
   getPullRequestByRepository:function(username,repository,callback){
     request({url:'https://api.github.com/repos/' +username +
-      '/'+repository+'/pulls', headers: {'user-agent': 'node.js'},json:true},
+      '/'+repository+'/pulls', headers: {'user-agent': 'node.js'},json:true,auth:{'user':token.user,'pass':token.token}},
       function(error,response,body){
         if (!error && response.statusCode == 200) {
           var objJSON=response.body;

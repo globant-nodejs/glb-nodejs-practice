@@ -18,7 +18,7 @@ module.exports={
         res.json(halres.toJSON());
       }
       else{
-        res.json(error);
+        res.status(404).json(error);
       }
 
     });     
@@ -44,7 +44,7 @@ module.exports={
         res.json(halres.toJSON());
       }
       else{
-        res.json(error);
+        res.status(404).json(error);
       }
 
     });     
@@ -72,7 +72,7 @@ getOneCommit:function(req,res){
         res.json(halres.toJSON());
       }
       else{
-        res.json(error);
+        res.status(404).json(error);
       }
     });
 },
@@ -96,7 +96,7 @@ getCommits:function(req,res){
       res.json(halres.toJSON());
     }
     else{
-      res.json(error);
+      res.status(404).json(error);
     }
   });
 },
@@ -117,7 +117,7 @@ getOnePullRequest:function(req,res){
         res.json(halres.toJSON());
       }
       else{
-        res.json(error);
+        res.status(404).json(error);
       }
     });
 },
@@ -140,7 +140,7 @@ getPullRequest:function(req,res){
         res.json(halres.toJSON());
       }
       else{
-        res.json(error);
+        res.status(404).json(error);
       }
     });
 },
@@ -183,7 +183,7 @@ getPullsAndCommits:function(req,res){
         res.json(halres.toJSON());
       }
       else{
-        res.json(error);
+        res.status(404).json(error);
       }
   });
 }
