@@ -19,7 +19,15 @@ replySinglePullRequest=require('./reply/singlePullRequest.json'),
 errorMessage=require('./reply/errors.json'),
 gitHubService=require('../src/services/githubService.js');
 
+/*
 
+ res.status(404).json(error);
+
+
+res={status:function(code){ return},};
+
+
+*/
 
 
 describe('API glb-nodejs-practice Controller Tests/',function(){
@@ -158,10 +166,17 @@ describe('API glb-nodejs-practice Controller Tests/',function(){
       var mock=sinon.stub(gitHubService,'getRepositoriesByUser',function(username,callback){
         callback(errorMessage[3]);
       });
+      var res=function(){
+        this.status=function(code){
+          return this;
+        }
+        this.json=function(response){
+          expect(response).to.deep.equal(errorMessage[3]);
+        }
+      };
 
-      gitHubController.getRepositories({params:{name:'lala'}},{json:function(response){
-        expect(response).to.deep.equal(errorMessage[3]);
-      }});
+      var resp = new res();
+      gitHubController.getRepositories({params:{name:'lala'}},resp);
 
     });
   });
@@ -175,10 +190,17 @@ describe('Error Message Getting All Commits/',function(){
       var mock=sinon.stub(gitHubService,'getCommitsByRepository',function(username,repository,callback){
         callback(errorMessage[4]);
       });
+      var res=function(){
+        this.status=function(code){
+          return this;
+        }
+        this.json=function(response){
+          expect(response).to.deep.equal(errorMessage[4]);
+        }
+      };
 
-      gitHubController.getCommits({params:{name:'lfantone',repo:'glb-nodejs-practicessss'}},{json:function(response){
-        expect(response).to.deep.equal(errorMessage[4]);
-      }});
+      var resp = new res();
+      gitHubController.getCommits({params:{name:'lfantone',repo:'glb-nodejs-practicessss'}},resp);
 
     });
   });
@@ -192,13 +214,24 @@ describe('Error Message Getting All Pull Requests/',function(){
       var mock=sinon.stub(gitHubService,'getPullRequestByRepository',function(username,repository,callback){
         callback(errorMessage[5]);
       });
+      var res=function(){
+        this.status=function(code){
+          return this;
+        }
+        this.json=function(response){
+          expect(response).to.deep.equal(errorMessage[5]);
+        }
+      };
 
-      gitHubController.getCommits({params:{name:'lfantone',repo:'glb-nodejs-practicessss'}},{json:function(response){
-        expect(response).to.deep.equal(errorMessage[5]);
-      }});
+      var resp = new res();
+      gitHubController.getPullRequest({params:{name:'lfantone',repo:'glb-nodejs-practicessss'}},resp);
 
     });
   });
+
+
+
+
 
 describe('Error Message Getting One Pull Request/',function(){
     afterEach(function(done) {
@@ -210,9 +243,23 @@ describe('Error Message Getting One Pull Request/',function(){
         callback(errorMessage[2]);
       });
 
+      var res=function(){
+        this.status=function(code){
+          return this;
+        }
+        this.json=function(response){
+          expect(response).to.deep.equal(errorMessage[2]);
+        }
+      };
+
+      var resp = new res();
+
+      /*this is the way to test res.status(404).json(error);*/
+      gitHubController.getOnePullRequest({params:{name:'lfantone',repo:'glb-nodejs-practicessss',number:09120274247}},resp);
+      /* this is the way to test res.json(error);
       gitHubController.getOnePullRequest({params:{name:'lfantone',repo:'glb-nodejs-practicessss',number:09120274247}},{json:function(response){
         expect(response).to.deep.equal(errorMessage[2]);
-      }});
+      }});*/
 
     });
   });
@@ -227,10 +274,18 @@ describe('Error Message Getting One Commit Error/',function(){
         callback(errorMessage[1]);
       });
 
-      gitHubController.getOneCommit({params:{name:'lfantone',repo:'glb-nodejs-practicesss',sha:'4dff4c82a6e8a7fdf5e63c5513ae581746c404da'}},
-        {json:function(response){
-        expect(response).to.deep.equal(errorMessage[1]);
-      }});
+      var res=function(){
+        this.status=function(code){
+          return this;
+        }
+        this.json=function(response){
+          expect(response).to.deep.equal(errorMessage[1]);
+        }
+      };
+
+      var resp = new res();
+
+      gitHubController.getOneCommit({params:{name:'lfantone',repo:'glb-nodejs-practicesss',sha:'4dff4c82a6e8a7fdf5e63c5513ae581746c404da'}},resp);
 
     });
   });
@@ -244,11 +299,17 @@ describe('Error Message Getting One Repository/',function(){
       var mock=sinon.stub(gitHubService,'getSingleRepository',function(username,repository,callback){
         callback(errorMessage[0]);
       });
+      var res=function(){
+        this.status=function(code){
+          return this;
+        }
+        this.json=function(response){
+          expect(response).to.deep.equal(errorMessage[0]);
+        }
+      };
 
-      gitHubController.getRepository({params:{name:'MDIAZ88',repo:'angular-labssss'}},
-        {json:function(response){
-        expect(response).to.deep.equal(errorMessage[0]);
-      }});
+      var resp = new res();
+      gitHubController.getRepository({params:{name:'MDIAZ88',repo:'angular-labssss'}},resp);
 
     });
   });
