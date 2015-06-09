@@ -10,7 +10,7 @@ El objetivo es armar una API para poder mostrar los respositorios de un usuario 
 * obtener el listado de commits de un repositorio
 * obtener la información de un commit especifico dentro de un repositorio
 * obtener el listado de pull request de un repositorio
-* obtener la información de una pull request especifica dentro de un 
+* obtener la información de una pull request especifica dentro de un repositorio
 * obtener la información de un pull request y sus commits asociados dado un repositorio
 
 ### Criterios de aceptación:
