@@ -86,7 +86,8 @@ getCommits:function(req,res){
       for (i = 0; i < objJSON.length; i++) {
         commits[i] = new hal.Resource({
           sha:objJSON[i].sha,Commit_Date:objJSON[i].commit.author.date,
-          Author:objJSON[i].commit.author.name,Message: objJSON[i].commit.message
+          Author:objJSON[i].commit.author.name,Message: objJSON[i].commit.message,
+          url:objJSON[i].html_url
         }, "/"+req.params.name+"/"+req.params.repo+"/commits/"+objJSON[i].sha);
       }
       halres.embed("Commits", commits);
@@ -170,7 +171,8 @@ getPullsAndCommits:function(req,res){
         for (i = 0; i < objJSON[1].length; i++) {
           commits[i] = new hal.Resource({
             sha:objJSON[1][i].sha,Commit_Date:objJSON[1][i].commit.author.date,
-            Author:objJSON[1][i].commit.author.name,Message: objJSON[1][i].commit.message
+            Author:objJSON[1][i].commit.author.name,Message: objJSON[1][i].commit.message,
+            url:objJSON[1][i].html_url
           }, "/"+req.params.name+"/"+req.params.repo+"/commits/"+objJSON[1][i].sha);
         }
 
