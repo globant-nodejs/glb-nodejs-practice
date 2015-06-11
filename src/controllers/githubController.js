@@ -110,7 +110,7 @@ getOnePullRequest:function(req,res){
           created_date:objJSON.created_at,updated_date:objJSON.updated_at,
           merged:objJSON.merged, commits:objJSON.commits,additions:objJSON.additions,
           deletions:objJSON.deletions,file_changes:objJSON.changed_files,
-          closed_date:'HAL-JSON',type:'Pull-Request',origin: "Github"},
+          id:'HAL-JSON',type:'Pull-Request',origin: "Github"},
           "/"+req.params.name+"/"+req.params.repo+"/pulls/"+req.params.number); 
         halres.link('pull-requests',"/"+req.params.name+"/"+req.params.repo+"/pulls");
         halres.link('repository',"/"+req.params.name+"/"+req.params.repo);
